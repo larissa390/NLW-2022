@@ -1,0 +1,211 @@
+
+/*Reset, config. navegador*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    /*Para excluir, indicador da lista*/
+    list-style: none;
+}
+
+body{
+    /*Adicionando uma imagemn de fundo*/
+    background-image: url(./assets/bg.jpg);
+
+    /*Posicionando a imagem de fundo, topo e centralizado */
+    background-position: top center;
+
+    /*Ajustanto e Centralizando a Imagem, conforme a tela*/
+    background-size: 100% auto;
+
+    /*Não repetir a imagem*/
+    background-repeat: no-repeat;
+
+    /*Ajustanto e Centralizando a Imagem*/
+    background-color: #121214;
+}
+
+body *{
+    font-family: 'inter', sans-serif;
+    line-height: 160%;
+}
+
+header {
+    padding-top: 32px;
+/*Alilha propriedade de texto*/
+    height: calc(120px + 32px);
+}
+
+header div{
+    width: 120px;
+    margin: auto;
+    background-image: linear-gradient(90deg, #9572fc 0%, #43e7ad 50.52%, #e2d45c 100%);
+    border-radius: 50%;
+    display: flex;
+    padding: 4px;
+    transition: transform.3s;
+    
+}
+
+header div:hover{
+    transform: scale(1.1);
+  
+    
+}
+
+
+
+header div img{
+    width: 100%;
+    border-radius: 50%;
+   
+   
+}
+
+main{
+    /*Largura Maxima de 580px, na Main que possui os cards como filhos*/
+    max-width: 580px;
+    /*Quando houver "%" é Relativo a largura da tela*/
+    width: 90%;
+    
+      /*Emcima embaixo*/
+    margin: 32px auto;
+
+    /*Espaço, caixa abaixo de caixa*/
+    display: grid;
+    gap: 24px;
+
+   
+
+
+}
+
+section{
+    color: wheat;
+    background-image: linear-gradient(90deg, #9572fc 0%, #43e7ad 50.52%, #e2d45c 100%);
+    padding-top: 4px;
+    border-radius:10px;
+}
+
+section div{
+    background-color: #2a2634;
+    padding: 32px;
+    padding-top: 24px;
+    border-radius: 8px;
+  
+    
+}
+
+
+section h2{
+     /*Espaço entre as letras*/
+    letter-spacing: -0.47px;
+
+}
+
+
+section p{
+    /*Espaço entre as letras*/
+   letter-spacing: -0.18px;
+   color: #a1a1aa;
+}
+
+/*Configuração de cards da lista não ordenada*/
+section ul{
+    /*deixa cada elemento um ao lado do outro*/
+   display: flex;
+    /*só funciona quando aplica o flex, espaçamento*/
+   gap: 16px;
+   margin-top: 24px;
+
+    /*Se houver mais imagens, atomaticamente cria uma sengunda linha
+   flex-wrap: wrap;*/
+}
+
+section ul li{
+    transition: transform .3s;
+
+
+}
+
+section ul li:hover{
+transform: scale(1.1);
+
+}
+
+.games-list img{
+    width: 70px;
+
+    /*arredondando a borda*/
+    border-radius: 8px;
+
+}
+
+.channel-list, .social-list, img{
+    width: 70px;
+     /*arredondando a borda*/
+    border-radius: 50%;
+    border: 2px solid #443e54;
+    
+}
+
+/*Fase Animação*/
+
+
+header div{
+animation: fromTop .7s 1s backwards;
+
+}
+
+/* O nome da animação você que determina*/
+@keyframes fromTop{
+    /*Começa*/
+    from{
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    /*Termina*/
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+main section{
+    animation: fromBottom .7s backwards;
+}
+
+
+/*nth-child  determina a animação do filho do elemento*/
+main section:nth-child(1){
+    animation-delay: 0;
+}
+
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+
+main section:nth-child(3){
+    animation-delay: .8s;
+}
+
+@keyframes fromBottom{
+    /*Começa*/
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    /*Termina*/
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+}
